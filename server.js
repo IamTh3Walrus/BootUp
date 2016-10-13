@@ -61,7 +61,7 @@ app.get('/', function(req, res) {
 		// console.log(result);
   	res.render('index', {
 			posts: result
-		});
+	 	});
 	});
 
 });
@@ -197,6 +197,30 @@ app.post('/queryPosts', function(req, res) {
 		res.send(data);	
 	});
 	
+});
+
+
+// CONFIGURE ROUTES TO API CALLS
+app.get('/api/categories', function(req, res) {
+  var urlAPI = 'https://api.meetup.com/2/categories?key=455f7f6c254e5c56503131d2e117a6a&sign=true';
+ 
+  request({url: urlAPI}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+    }
+  });
+});
+
+app.get('/api/groups', function(req, res) {
+  var urlAPI = 'https://api.meetup.com/2/groups?key=455f7f6c254e5c56503131d2e117a6a&sign=true&photo-host=public&zip=' + req.query.zip + '&category_id=' + req.query.category_id + '&page=20;';
+ 
+  request({url: urlAPI}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+    } else {
+      console.log('ERROR: ', error);
+    }
+  });
 });
 
 
