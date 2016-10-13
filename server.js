@@ -164,6 +164,24 @@ app.post('/posts/:id/:vote', function(req, res) {
 	});
 });
 
+
+// Create a route for the AJAX search POST request
+
+app.post('/queryPosts', function(req, res) {
+	console.log("Here is the query stuff ")
+  console.log(req.body.title)	
+	Posts.findAll({
+		title: req.body.title
+	}).then(function(data) {
+
+		console.log('found something')
+		// res.send(data);	
+		res.render('search', {data:data})
+	});
+	
+});
+
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
 	console.log('connected to', port);
