@@ -7,6 +7,7 @@ var Categories = require('./models')['Categories'];
 var Comments = require('./models')['Comments'];
 var Search = require('./models')['Search'];
 var session = require('express-session');
+
 //var moment = require('moment');
 
 var models  = require('./models');
@@ -25,6 +26,7 @@ sequelizeConnection.query('SET FOREIGN_KEY_CHECKS = 0')
 		app.locals.categories = results;
 	});
 })
+
 
 var app = express();
 
@@ -180,6 +182,7 @@ app.post('/queryPosts', function(req, res) {
 	});
 	
 });
+
 
 
 var port = process.env.PORT || 3000;

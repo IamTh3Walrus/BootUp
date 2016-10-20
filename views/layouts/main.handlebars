@@ -15,7 +15,7 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-	<body>
+	<body>ss
 	<div id="secondHeader">
 		<a class="navbar-brand" href="/">
         <img alt="BootUp" class="bootup-brand" src="/image/bootuplogo.png">
@@ -30,32 +30,27 @@
 			{{#each categories}}
 				<a href="/categories/{{this.url}}?title={{this.title}}">{{this.title}}</a>
 			{{/each}}
-
-
-			
 		</header> 
 		</div>
+		<br>
+		<br>
 		<div id="thirdHeader">
 			<button type="button" class="btn btn-default" id="submitPost">
 		    			 	<a href="/new-post">Submit New Post <span class="sr-only">(current)</span></a>    
-		    			 </button>
-	
+		   </button>
 		</div>
-		
-	
-		
-	
-        
-        <div class="container">
-		<div class="wrapper">
-		<div class="content">
-		{{{ body }}}
-		<!-- Start Content -->
-		<div class="particle-box"></div>
+		<br>
+		<br>
+		<div class="container">
+			<div class="wrapper">
+				<div class="content">
+					{{{ body }}}
+				<!-- Start Content -->
+					<div class="particle-box"></div>
 		<!-- End Content -->
+				</div>
 			</div>
-			</div>
-			</div>
+		</div>
 			
 
 

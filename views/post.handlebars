@@ -1,27 +1,25 @@
-<br>
-<br>
-<br>
+
 
 <div class="panel panel-danger">
   <div class="panel-heading">
-    <h2 class="panel-title"><h3 class="text-center">{{post.title}}</h3>
+    <h2 class="panel-title"><h3 class="text-center"><strong>{{post.title}}</strong></h3>
   </div>
 <div class="panel-body">
  <dl class="dl-horizontal">
   <dt><h5 class="text-left">Created At:</h5></dt>
-  <dd><h5 class="text-center">{{post.createdAt}}</h5></dd>
+  <dd><h5 class="text-left">{{post.createdAt}}</h5></dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><h5 class="text-left">Image:</h4></dt>
-  <dd><h5 class="text-center">{{post.image}}</h5></dd>
+  <dd><h5 class="text-left">{{post.image}}</h5></dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><h5 class="text-left">Description:</h4></dt>
-  <dd><h5 class="text-center">{{post.description}}</h5></dd>
+  <dd><h5 class="text-left">{{post.description}}</h5></dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><h5 class="text-left">Score:</h5></dt>
-  <dd><h5 class="text-center">{{post.score}}</h5></dd>
+  <dd><h5 class="text-left">{{post.score}}</h5></dd>
 </dl>
 
 {{#if post.snippet}}
@@ -44,20 +42,16 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"></h3>
+    <h3 class="panel-title text-center"><strong>Comments</strong></h3>
   </div>
   <div class="panel-body">
-    <dl class="dl-horizontal">
-      <dt><h5 class="text-left">Comments</h5></dt>
-      <dd><h5 class="text-center"> {{#each post.Comments}}</h5></dd>
-     <div>{{this.createdAt}} - {{this.comment}}</div>
-      {{/each}} </h5></dd>
-</dl>
+      {{#each post.Comments}}
+      <div class="panel-body panel panel-danger">
+      {{this.createdAt}} - {{this.comment}}
+      </div>
+      {{/each}}   
   </div>
 </div>
-  
-
-
 </div>
 </div>
 

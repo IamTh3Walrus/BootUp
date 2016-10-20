@@ -78,6 +78,8 @@ footer {
 #submitPost {
     background-color: #ccc;
     color: #000;
+    margin: auto;
+    display: block;
 }
 
 #footerBoot {
@@ -134,6 +136,7 @@ header a:focus {
     /*margin-top: 55px;*/
     margin-right: 10px;
 }
+
 
 #stephenGit {
     height: 80px;
