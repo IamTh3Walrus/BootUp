@@ -32,6 +32,14 @@ var app = express();
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/public', function(req,res){
+	res.sendFile('meet.html', viewOptions)
+});
+
+/*app.get('/',function(req, res){
+	res.sendFile('alerts.html',viewOptions)
+})*/
+
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
@@ -93,6 +101,9 @@ app.get('/categories/:category', function(req, res) {
 	});
 });
 
+app.get('/meetup', function(req, res) {
+	res.render('new');
+});
 
 //form page
 app.get('/new-post', function(req, res) {
